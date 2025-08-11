@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Islamia Printers - Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arial&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="input-section">
+        <h1>Invoice Data Entry</h1>
+        <label for="input-date">Date:</label>
+        <input type="text" id="input-date" value="11-08-2025">
+
+        <label for="input-sr-no">Sr. No.:</label>
+        <input type="text" id="input-sr-no" value="005">
+
+        <label for="input-name">Customer Name:</label>
+        <input type="text" id="input-name" value="A&K Pharmaceutical">
+        
+        <h3>Invoice Items</h3>
+        <div id="item-inputs"></div>
+        <button type="button" id="add-item-btn">+ Add Item</button>
+
+        <h3>Totals</h3>
+        <label for="input-adv">Advance (ADV.):</label>
+        <input type="number" id="input-adv" value="0">
+        
+        <hr>
+        <button id="generate-pdf-btn">Generate and Download PDF</button>
+    </div>
+
+
+    <div id="invoice-preview">
+        <div class="invoice-container">
+<header class="invoice-header">
+    <img src="logo.png" alt="Islamia Printers Logo" class="logo">
+    <div class="header-right">
+        <div class="contact-info">
+            <p>📍 P-28, St.# 4 Press Market, Aminpur Bazar, Faisalabad. ✉️ islamisprinters2012@gmail.com</p>
+        </div>
+        <div class="contact-info-separator"></div>
+        <div class="contact-info">
+            <p>👤 M. ABDUL HAFEEZ | +92 301 7115330 👤 ABDUL WAHEED CH | +92 300 6609031</p>
+        </div>
+    </div>
+</header>
+            <section class="invoice-meta">
+                <div>Date: <span id="output-date">11-08-2025</span></div>
+                <div>Sr. <span id="output-sr-no">005</span></div>
+            </section>
+
+            <section class="customer-info">
+                <div>Name: <span id="output-name">A&K Pharmaceutical</span></div>
+            </section>
+
+            <main class="invoice-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DESCRIPTION</th>
+                            <th>QTY.</th>
+                            <th>RATE</th>
+                            <th>AMOUNT</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-items-table">
+                        </tbody>
+                </table>
+            </main>
+
+            <aside class="invoice-totals">
+                <div class="total-row">
+                    <span class="label">TOTAL</span>
+                    <span id="output-total">0.00/-</span>
+                </div>
+                <div class="total-row">
+                    <span class="label">ADV.</span>
+                    <span id="output-adv">0.00/-</span>
+                </div>
+                <div class="total-row balance">
+                    <span class="label">BAL.</span>
+                    <span id="output-bal">0.00/-</span>
+                </div>
+            </aside>
+            
+            <footer class="invoice-footer">
+                <img src="footer-graphic.png" alt="City Skyline" class="footer-graphic">
+                <div class="signature">Signature</div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
