@@ -153,3 +153,23 @@ th:nth-child(4), td:nth-child(4) {
     border-top: 1px solid #aaa;
     padding-top: 5px;
 }
+/* --- Mobile Responsive Styles --- */
+/* This block will only apply on screens 768px wide or smaller */
+@media (max-width: 768px) {
+    body {
+        /* Stacks the form and preview vertically instead of side-by-side */
+        flex-direction: column;
+        padding: 10px; /* Reduces padding on small screens */
+    }
+
+    #input-section,
+    #invoice-preview {
+        /* Makes both sections take up the full width of the screen */
+        width: 100%;
+    }
+
+    .invoice-container {
+        /* Removes the fixed height to let content flow naturally */
+        min-height: auto;
+    }
+}
