@@ -178,9 +178,4 @@ th:nth-child(4), td:nth-child(4) {
         /* Make the contact info text centered on mobile */
         text-align: center;
     }
-    .invoice-container {
-        /* Removes the fixed height to let content flow naturally */
-        min-height: auto;
-    }
 }
-
