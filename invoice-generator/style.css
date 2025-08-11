@@ -157,19 +157,30 @@ th:nth-child(4), td:nth-child(4) {
 /* This block will only apply on screens 768px wide or smaller */
 @media (max-width: 768px) {
     body {
-        /* Stacks the form and preview vertically instead of side-by-side */
         flex-direction: column;
-        padding: 10px; /* Reduces padding on small screens */
+        padding: 10px;
     }
 
     #input-section,
     #invoice-preview {
-        /* Makes both sections take up the full width of the screen */
         width: 100%;
     }
 
+    /* --- ADD THESE NEW RULES FOR THE HEADER --- */
+    .invoice-header {
+        /* Stack the logo and contact info vertically */
+        flex-direction: column;
+        align-items: center; /* Center them horizontally */
+        gap: 15px; /* Add space between logo and text */
+    }
+
+    .header-right {
+        /* Make the contact info text centered on mobile */
+        text-align: center;
+    }
     .invoice-container {
         /* Removes the fixed height to let content flow naturally */
         min-height: auto;
     }
 }
+
